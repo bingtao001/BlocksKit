@@ -20,6 +20,11 @@
 {
 	BOOL ret = YES;
 	id realDelegate = self.realDelegate;
+    
+    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
+        return ret;
+    }
+
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textFieldShouldBeginEditing:)])
 		ret = [realDelegate textFieldShouldBeginEditing:textField];
 	BOOL (^block)(UITextField *) = [self blockImplementationForMethod:_cmd];
@@ -31,6 +36,13 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
 	id realDelegate = self.realDelegate;
+    
+    
+    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
+        return;
+    }
+    
+
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textFieldDidBeginEditing:)])
 		[realDelegate textFieldDidBeginEditing:textField];
 	void (^block)(UITextField *) = [self blockImplementationForMethod:_cmd];
@@ -42,6 +54,12 @@
 {
 	BOOL ret = YES;
 	id realDelegate = self.realDelegate;
+    
+    
+    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
+        return ret;
+    }
+    
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textFieldShouldEndEditing:)])
 		ret = [realDelegate textFieldShouldEndEditing:textField];
 	BOOL (^block)(UITextField *) = [self blockImplementationForMethod:_cmd];
@@ -53,6 +71,11 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
 	id realDelegate = self.realDelegate;
+    
+    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
+        return;
+    }
+
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textFieldDidEndEditing:)])
 		[realDelegate textFieldDidEndEditing:textField];
 	void (^block)(UITextField *) = [self blockImplementationForMethod:_cmd];
@@ -64,6 +87,11 @@
 {
 	BOOL ret = YES;
 	id realDelegate = self.realDelegate;
+    
+    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
+        return ret;
+    }
+    
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textField:shouldChangeCharactersInRange:replacementString:)])
 		ret = [realDelegate textField:textField shouldChangeCharactersInRange:range replacementString:string];
 	BOOL (^block)(UITextField *, NSRange, NSString *) = [self blockImplementationForMethod:_cmd];
@@ -76,6 +104,11 @@
 {
 	BOOL ret = YES;
 	id realDelegate = self.realDelegate;
+    
+    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
+        return ret;
+    }
+    
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textFieldShouldClear:)])
 		ret = [realDelegate textFieldShouldClear:textField];
 	BOOL (^block)(UITextField *) = [self blockImplementationForMethod:_cmd];
@@ -88,6 +121,11 @@
 {
 	BOOL ret = YES;
 	id realDelegate = self.realDelegate;
+    
+    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
+        return ret;
+    }
+    
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textFieldShouldReturn:)])
 		ret = [realDelegate textFieldShouldReturn:textField];
 	BOOL (^block)(UITextField *) = [self blockImplementationForMethod:_cmd];
