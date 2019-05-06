@@ -35,11 +35,7 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
 	id realDelegate = self.realDelegate;
-    
-    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
-        return;
-    }
-    
+
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textViewDidBeginEditing:)])
 		[realDelegate textViewDidBeginEditing:textView];
 	void (^block)(UITextView *) = [self blockImplementationForMethod:_cmd];
@@ -52,10 +48,6 @@
 	BOOL ret = YES;
     id realDelegate = self.realDelegate;
     
-    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
-        return ret;
-    }
-    
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textViewShouldEndEditing:)])
 		ret = [realDelegate textViewShouldEndEditing:textView];
 	BOOL (^block)(UITextView *) = [self blockImplementationForMethod:_cmd];
@@ -67,11 +59,7 @@
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
 	id realDelegate = self.realDelegate;
-    
-    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
-        return;
-    }
-    
+
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textViewDidEndEditing:)])
 		[realDelegate textViewDidEndEditing:textView];
 	void (^block)(UITextView *) = [self blockImplementationForMethod:_cmd];
@@ -83,11 +71,7 @@
 {
 	BOOL ret = YES;
 	id realDelegate = self.realDelegate;
-    
-    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
-        return ret;
-    }
-    
+
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textView:shouldChangeTextInRange:replacementText:)])
 		ret = [realDelegate textView:textView shouldChangeTextInRange:range replacementText:text];
 	BOOL (^block)(UITextView *, NSRange, NSString *) = [self blockImplementationForMethod:_cmd];
@@ -99,11 +83,7 @@
 - (void)textViewDidChange:(UITextView *)textView
 {
 	id realDelegate = self.realDelegate;
-    
-    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
-        return;
-    }
-    
+
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textViewDidChange:)])
 		[realDelegate textViewDidChange:textView];
 	void (^block)(UITextView *) = [self blockImplementationForMethod:_cmd];
@@ -114,11 +94,7 @@
 - (void)textViewDidChangeSelection:(UITextView *)textView
 {
 	id realDelegate = self.realDelegate;
-    
-    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
-        return;
-    }
-    
+
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textViewDidChangeSelection:)])
 		[realDelegate textViewDidChangeSelection:textView];
 	void (^block)(UITextView *) = [self blockImplementationForMethod:_cmd];
@@ -130,11 +106,7 @@
 {
 	BOOL ret = YES;
 	id realDelegate = self.realDelegate;
-    
-    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
-        return ret;
-    }
-    
+
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textView:shouldInteractWithTextAttachment:inRange:)])
 		ret = [realDelegate textView:textView shouldInteractWithTextAttachment:textAttachment inRange:characterRange];
 	BOOL (^block)(UITextView *, NSTextAttachment *, NSRange) = [self blockImplementationForMethod:_cmd];
@@ -147,11 +119,7 @@
 {
 	BOOL ret = YES;
 	id realDelegate = self.realDelegate;
-    
-    if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
-        return ret;
-    }
-    
+
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textView:shouldInteractWithURL:inRange:)])
 		ret = [realDelegate textView:textView shouldInteractWithURL:URL inRange:characterRange];
 	BOOL (^block)(UITextView *, NSURL *, NSRange) = [self blockImplementationForMethod:_cmd];
